@@ -4,16 +4,14 @@ import mysql.connector
 
 connection = mysql.connector.connect(
     host = "localhost",
-    user = "root",
-    password = "mysql"
+    user = "****",
+    password = "*****"
 ) 
 
 cursor = connection.cursor()
 
 #       Database creation
 
-cursor.execute(' CREATE DATABASE if not exists school')
-cursor.execute('USE school')
 
 #       Table creation
 
@@ -59,7 +57,7 @@ def add_student():
         return
 
     try:
-        phone_no = int(input('Mobile Number: '))    
+        phone_no = input('Mobile Number: ')    
         if not phone_no.isdigit() or len(phone_no) != 10:
             print("Enter a valid 10-digit mobile number.")
             return 
